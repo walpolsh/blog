@@ -2,39 +2,44 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css'></link>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-    <nav class="navbar navbar-inverse bg-inverse">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <h1>Pauls Music Blog</h1>
-    <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-inverse p-4">
-          <ul class="nav nav-pills nav-justified .navbar-light">
-            <li class="nav-item">
-              <a class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/audio">Audio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/video">Video</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/blog">Blog</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="wrapper">
+
+      <nav id="sidebar">
+        <!-- Sidebar Links -->
+        <ul class="list-unstyled components">
+          <div class="flex-container">
+            <a href="#homeSubmenu" class="glyphicon glyphicon-th-list" data-toggle="collapse" aria-expanded="false"></a>
+
+
+            <ul class="collapse" id="homeSubmenu">
+              <ul class="active"><a href="/">Home</a></ul>
+              <ul><a class="nav-link" href="/blog">Blog</a></ul>
+              <ul><a class="nav-link" href="/audio">Audio</a></ul>
+              <ul><a class="nav-link" href="/video">Video</a></ul>
+            </ul>
+          </div>
+        </ul>
+      </nav>
+
     </div>
-  </nav>
     {{{body}}}
   </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <!-- Bootstrap Js CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $('#sidebarCollapse').on('click',() => {
+              $('#sidebar').toggleClass('active');
+              $(this).toggleClass('active');
+          });
+      });
+  </script>
+
 </html>
