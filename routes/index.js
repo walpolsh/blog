@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 exports.index =  function(req, res){
-  res.render('index', { title: 'Pauls Music Blog' });
+  res.render('index', { title: 'Paul\'s Music Blog' });
 };
 
 exports.audio =  function(req, res){
