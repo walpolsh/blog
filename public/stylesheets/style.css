@@ -23,14 +23,17 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
-.flex-container {
+#flex-container {
   display: flex;
   flex-direction: row;
 }
 
+#title {
+  margin: 0;
+  float: right;
+  padding-right: 10px;
+}
 #sidebar {
-    /* don't forget to add all the previously mentioned styles here too */
-
     width: 100%;
     background: #7386D5;
     color: #fff;
@@ -47,13 +50,20 @@ a, a:hover, a:focus {
     border-bottom: 1px solid #47748b;
 }
 
+#homeSubmenu {
+  padding: 0;
+}
+
+#homeSubmenu ul {
+  padding: 0;
+}
+
 #sidebar ul p {
     color: #fff;
     padding: 10px;
 }
 
 #sidebar ul li a {
-    padding: 10px;
     font-size: 1.1em;
     display: block;
 }
