@@ -17,3 +17,7 @@ exports.video =  function(req, res){
 exports.blog =  function(req, res){
   res.render('blog', { title: 'Blog' });
 };
+
+exports.practice =  function(req, res){
+  res.render('practice', { title: 'Practice' });
+};
