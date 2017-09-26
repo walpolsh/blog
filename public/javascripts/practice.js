@@ -18,8 +18,10 @@ Array.prototype.shuffle = (array) => {
   return array
 }
 
+
+
 const scales = [['minor 1 2 b3 4 5 b6 b7'], ['dorian 1 2 b3 4 5 6 b7'],
-['lydian dominant 1 2 3 #4 5 6 7'], ['phrygian dominant 1 b2 3 4 5 b6 b7.'],
+['lydian dominant 1 2 3 #4 5 6 b7'], ['phrygian dominant 1 b2 3 4 5 b6 b7.'],
 ['half-whole 1 b2 b3 3 b5 5 6 b7'], ['whole-half 1 2 b3 4 b5 b6 6 7']]
 
 const keys = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
@@ -31,8 +33,9 @@ const direction = ['Down', 'Up'];``
 
 //Fisher–Yates Shuffle
 
-const threeNoteSequence = () => { return '3 Note: Root ' + intervals.shuffle(intervals).slice(1, 3).join(' ') };
-const fourNoteSequence = () => { return '4 Note: Root ' + intervals.shuffle(intervals).slice(1, 4).join(' ') };
+
+const threeNoteSequence = () => { return 'Key: ' + keys.random() + ', Position ' + caged.random() + ', Sequence: Root ' + intervals.shuffle(intervals).slice(1, 3).join(' ') };
+const fourNoteSequence = () => { return 'Key: ' + keys.random() + ', Position ' + caged.random() + ', Sequence: Root ' + intervals.shuffle(intervals).slice(1, 4).join(' ') };
 const fiveNoteSequence = () => { return '5 Note: Root ' + intervals.shuffle(intervals).slice(1, 5).join(' ') };
 
 const triplets = () => {
@@ -63,22 +66,25 @@ const intervalCombinations = (x) => {
   console.log()
 };
 
-const postEightNoteSequence = function () {
+const postThreeNoteSequence = function () {
+  var textnode1 = document.createTextNode(threeNoteSequence());
   var node1 = document.createElement('ul');
+  node1.appendChild(textnode1);
+  document.getElementById('3notesequence').appendChild(node1);
+
+}
+const postEightNoteSequence = function () {
   var node2 = document.createElement('ul');
   var node3 = document.createElement('ul');
-  var textnode1 = document.createTextNode(threeNoteSequence());
   var textnode2 = document.createTextNode(fourNoteSequence());
   var textnode3 = document.createTextNode(fiveNoteSequence());
 
   // var checkbox = document.createElement('input');
   // checkbox.type = 'checkbox';
   // node.appendChild(checkbox);
-  node1.appendChild(textnode1);
   node2.appendChild(textnode2);
   node3.appendChild(textnode3);
 
-  document.getElementById('8notesequence').appendChild(node1);
   document.getElementById('8notesequence').appendChild(node2);
   document.getElementById('8notesequence').appendChild(node3);
 }
